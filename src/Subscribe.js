@@ -13,14 +13,20 @@ function Subscribe() {
       <button
         onClick={() => {
           setSubscribed(!subscribed);
-          setSubscribedCount(currentCount => currentCount + 1);
-          setSubscribedCount(function(currentCount){return currentCount+1});
+          setSubscribedCount((currentCount) => currentCount + 1);
+          setSubscribedCount(function (currentCount) {
+            return currentCount + 1;
+          });
           if (!alerts) setAlerts(true);
         }}
       >
         {subscribed ? "Unsubscribe" : "Subscribe"}
       </button>
-      <button onClick={() => setAlerts(!alerts)}>
+      <button
+        onClick={() => {
+          setAlerts(!alerts);
+        }}
+      >
         {alerts ? "Stop Email Alerts" : "Get Email Alerts"}
       </button>
     </section>
