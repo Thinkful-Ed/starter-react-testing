@@ -4,8 +4,14 @@ import Greeting from "./Greeting";
 import Footer from "./Footer";
 
 function App() {
+  const handleClick = (evt) => {
+    console.log("Subscribing!");
+    console.log(evt.target);
+    //alert("You subscribed!");
+  }
   return (
     <>
+      <button onClick={handleClick}>Subscribe</button>
       <Header />
       <WelcomeBack name="Joe" />
       <WelcomeBack name="Anna" />
