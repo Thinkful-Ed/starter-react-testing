@@ -5,11 +5,19 @@ describe("App", () => {
     test("renders without crashing",() => {
         render(<App />);
     });
-    test("render three Welcome back messages",() =>{
+    test("renders three Welcome back messages",() =>{
         render(<App />);
         const messages = screen.getAllByText(/welcome back/i);
         expect(messages).toHaveLength(3);
     });
+    test("renders three greetings",() =>{
+        render(<App />);
+        const greeting = screen.getAllByText(/hello and /i); 
+        //("Hello and ") doesnt like it
+        expect(greeting).toHaveLength(3);
+    });
+
+
 });
 
     /*test("WelcomeBack are called 3 times",() => {
